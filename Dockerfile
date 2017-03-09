@@ -5,7 +5,7 @@ ENV DEBIAN_FRONTEND noninteractive
 MAINTAINER Alexander Thurman, <it.snake.co.inc@gmail.com>
 
 #Install nodeJS to Linux Container
-RUN sudo apt-get install -y curl
+RUN apt-get update && sudo apt-get install -y curl
 RUN curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 RUN sudo apt-get install -y nodejs
 
