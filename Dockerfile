@@ -17,15 +17,18 @@ USER container
 ENV  HOME /home/container
 
 # Create app directory
-RUN mkdir -p /home/container/app
-WORKDIR /home/container/app
+RUN mkdir -p /home/container/
+WORKDIR /home/container/
+
+#Copy over files from Git Repo
+COPY ./package.json /package.json
+COPY ./server.js /server.js
+COPY ./config.json /config.json
+COPY ./LICENSE /LICENSE
+COPY ./README.md /README.md
 
 # Install app dependencies
-COPY package.json /home/container/app/
 RUN npm install
-
-# Bundle app source
-COPY . /home/container/app
 
 #Start the bot
 CMD [ "npm", "start" ]
