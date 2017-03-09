@@ -1,0 +1,13 @@
+{
+  "name": "Discord_Rainbowbot_Docker_Image",
+  "version": "1.0.0",
+  "description": "Discord Rainbowbot on Docker",
+  "author": "Alexander Thurman <it.snake.co.inc@gmail.com>",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "discord.js": "latest"
+  }
+}
