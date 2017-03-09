@@ -7,7 +7,7 @@ MAINTAINER Alexander Thurman, <it.snake.co.inc@gmail.com>
 #Install nodeJS to Linux Container
 RUN apt-get update && apt-get install -y curl
 RUN curl -sL https://deb.nodesource.com/setup_6.x
-RUN apt-get install -y nodejs
+RUN apt-get install -y nodejs npm
 
 #Add container user
 RUN useradd -m -d /home/container container
