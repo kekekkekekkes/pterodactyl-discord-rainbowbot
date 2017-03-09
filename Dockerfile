@@ -3,6 +3,9 @@ FROM node:latest
 
 MAINTAINER Alexander Thurman, <it.snake.co.inc@gmail.com>
 
+#Add container user
+RUN adduser -D -h /home/container container
+
 #Set container environment
 USER container
 ENV  HOME /home/container
