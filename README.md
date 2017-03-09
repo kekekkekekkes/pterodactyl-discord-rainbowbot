@@ -2,8 +2,6 @@
 Getting a Rainbow Role with a Discord Bot **using Discord.JS**
 
 ## Usage:
-1. Install [**Discord.JS**](https://github.com/hydrabolt/discord.js/)
-2. Get this code
 3. Change config.js
 
 ## Config:
