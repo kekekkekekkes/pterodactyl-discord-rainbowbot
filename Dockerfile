@@ -30,4 +30,4 @@ COPY ./README.md /README.md
 RUN npm install
 
 #Start the bot
-CMD [ "npm", "start" ]
+CMD ["/bin/bash", "npm start"]
