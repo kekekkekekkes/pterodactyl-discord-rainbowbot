@@ -21,11 +21,11 @@ RUN mkdir -p /home/container/
 WORKDIR /home/container/
 
 #Copy over files from Git Repo
-COPY ./package.json /package.json
-COPY ./server.js /server.js
-COPY ./config.json /config.json
-COPY ./LICENSE /LICENSE
-COPY ./README.md /README.md
+COPY /package.json ./package.json
+COPY /server.js ./server.js
+COPY /config.json ./config.json
+COPY /LICENSE ./LICENSE
+COPY /README.md ./README.md
 
 # Install app dependencies
 RUN npm install
