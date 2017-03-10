@@ -1,13 +1,7 @@
 # Minimal Discord Rainbowbot Docker container for Pterodactyl Panel
-FROM ubuntu:16.04
-ENV DEBIAN_FRONTEND noninteractive
+FROM node:latest
 
 MAINTAINER Alexander Thurman, <it.snake.co.inc@gmail.com>
-
-#Install nodeJS to Linux Container
-RUN apt-get update && apt-get install -y curl
-RUN curl -sL https://deb.nodesource.com/setup_6.x
-RUN apt-get install -y nodejs npm
 
 #Add container user
 RUN useradd -m -d /home/container container
@@ -20,14 +14,14 @@ ENV  HOME /home/container
 WORKDIR /home/container
 
 #Copy over files from Git Repo
-COPY ./package.json /package.json
-COPY ./server.js /server.js
-COPY ./config.json /config.json
-COPY ./LICENSE /LICENSE
-COPY ./README.md /README.md
+COPY ./package.json /home/container/package.json
+COPY ./server.js /home/container/server.js
+COPY ./config.json /home/container/config.json
+COPY ./LICENSE /home/container/LICENSE
+COPY ./README.md /home/container/README.md
 
 # Install app dependencies
 RUN npm install
 
 #Start the bot
-CMD ["/bin/bash", "npm start"]
+CMD ["npm", "start"]
