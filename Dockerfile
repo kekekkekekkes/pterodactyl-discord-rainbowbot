@@ -1,18 +1,23 @@
-# Minimal Discord Rainbow Bot Docker container for Pterodactyl Panel
+# ----------------------------------
+# Pterodactyl NodeJS Dockerfile
+# Environment: Node
+# Minimum Panel Version: 0.6.0
+# ----------------------------------
 FROM node:latest
 
-MAINTAINER Alexander Thurman, <it.snake.co.inc@gmail.com>
+MAINTAINER Pterodactyl Software, <support@pterodactyl.io>
 
 RUN apk update \
     && apk upgrade \
-    && apk add --no-cache --update curl ca-certificates openssl perl \
+    && apk add --no-cache --update curl ca-certificates openssl git tar bash sqlite \
     && adduser -D -h /home/container container
 
 USER container
+ENV  USER container
 ENV  HOME /home/container
 
 WORKDIR /home/container
 
-COPY ./start.sh /start.sh
+COPY ./entrypoint.sh /entrypoint.sh
 
-CMD ["/bin/ash", "/start.sh"]
+CMD ["/bin/bash", "/entrypoint.sh"]
