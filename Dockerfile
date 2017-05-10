@@ -5,11 +5,10 @@
 # ----------------------------------
 FROM node:latest
 
-MAINTAINER Pterodactyl Software, <support@pterodactyl.io>
+MAINTAINER Alexander Thurman, <it.snake.co.inc@gmail.com>
 
 RUN apk update \
     && apk upgrade \
-    && apk add --no-cache --update curl ca-certificates openssl git tar bash sqlite \
     && adduser -D -h /home/container container
 
 USER container
